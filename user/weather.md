@@ -32,4 +32,38 @@ application/x-www-form-urlencoded
 {% swagger-parameter in="body" name="fineDust" required="true" %}
 미세먼지 값
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+저장에 성공 하였을 때
+
+```javascript
+{
+    "status": 200,
+    "detail": "OK",
+    "data": {}
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+일부 값이 전달되지 않았을 때
+
+```javascript
+{
+    "status": 400,
+    "detail": "Some Values are missing",
+    "data": {}
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="" %}
+토큰이 유효하지 않을 때
+
+```javascript
+{
+    "detail": "Invalid token." 
+}
+```
+{% endswagger-response %}
 {% endswagger %}
